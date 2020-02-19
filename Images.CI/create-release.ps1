@@ -3,7 +3,8 @@ param(
     [String] [Parameter (Mandatory = $True)] $Organization,
     [String] [Parameter (Mandatory = $True)] $Project,
     [String] [Parameter (Mandatory = $True)] $ImageName,
-    [String] [Parameter (Mandatory = $True)] $DefinitionId
+    [String] [Parameter (Mandatory = $True)] $DefinitionId,
+    [String] [Parameter (Mandatory = $True)] $AccessToken
 )
 
 $Body = @{
@@ -16,6 +17,13 @@ $Body = @{
 }
 
 $URL = "https://vsrm.dev.azure.com/$Organization/$Project/_apis/release/releases?api-version=5.1"
-$NewRelease = Invoke-WebRequest $URL -Body $Body -Method "POST"
+
+$base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("'':${AccessToken}"))
+$headers = @{
+    Authorization = "Basic ${base64AuthInfo}"
+}
+
+$NewRelease = Invoke-RestMethod $URL -Body $Body -Method "POST" -Headers $headers
+
 
 Write-Host "Created release: $($NewRelease.release._links.web.refs)"

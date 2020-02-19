@@ -34,7 +34,9 @@ jobs:
                         -Organization $(RELEASE_TARGET_ORGANIZATION) `
                         -DefinitionId $(RELEASE_TARGET_DEFINITION_ID) `
                         -Project $(RELEASE_TARGET_PROJECT) `
-                        -ImageName ${{ parameters.image_type }}
+                        -ImageName ${{ parameters.image_type }} `
+                        -AccessToken $(RELEASE_TARGET_TOKEN)
+
 
   - task: PowerShell@2
     displayName: 'Clean up resources'
