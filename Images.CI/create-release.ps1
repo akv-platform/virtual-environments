@@ -23,7 +23,7 @@ $headers = @{
     Authorization = "Basic ${base64AuthInfo}"
 }
 
-$NewRelease = Invoke-RestMethod $URL -Body $Body -Method "POST" -Headers $headers
+$NewRelease = Invoke-RestMethod $URL -Body $Body -Method "POST" -Headers $headers -ContentType "application/json"
 
 
 Write-Host "Created release: $($NewRelease.release._links.web.refs)"
