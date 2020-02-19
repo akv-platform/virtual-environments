@@ -17,11 +17,13 @@ $Body = @{
 }
 
 $URL = "https://vsrm.dev.azure.com/$Organization/$Project/_apis/release/releases?api-version=5.1"
+
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("'':${AccessToken}"))
 $headers = @{
     Authorization = "Basic ${base64AuthInfo}"
 }
 
 $NewRelease = Invoke-RestMethod $URL -Body $Body -Method "POST" -Headers $headers
+
 
 Write-Host "Created release: $($NewRelease.release._links.web.refs)"

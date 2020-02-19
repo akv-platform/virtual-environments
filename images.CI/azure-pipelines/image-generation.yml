@@ -37,6 +37,7 @@ jobs:
                         -ImageName ${{ parameters.image_type }} `
                         -AccessToken $(RELEASE_TARGET_TOKEN)
 
+
   - task: PowerShell@2
     displayName: 'Clean up resources'
     condition: always()
