@@ -1,19 +1,21 @@
 param(
-    [String] [Parameter (Mandatory = $True)] $ArtifactUrl,
-    [String] [Parameter (Mandatory = $True)] $BuildArtifactsPath,
+    [String] [Parameter (Mandatory = $True)] $BuildId,
     [String] [Parameter (Mandatory = $True)] $Organization,
-    [String] [Parameter (Mandatory = $True)] $Project
+    [String] [Parameter (Mandatory = $True)] $Project,
+    [String] [Parameter (Mandatory = $True)] $ImageName,
+    [String] [Parameter (Mandatory = $True)] $DefinitionId
 )
 
 $Body = @{
-    definitionId = "3851"
+    definitionId = $DefinitionId
     variables = {
-        ImageBuildArtifactUrl = $ArtifactUrl
-        ImageName = "test-name"
+        ImageBuildId = $BuildId
+        ImageName = $ImageName
     }
     isDraft = "false"
 }
 
-$NewRelease = Invoke-WebRequest "https://vsrm.dev.azure.com/$Organization/$Project/_apis/release/releases?api-version=5.1" -Body $Body -Method "POST"
+$URL = "https://vsrm.dev.azure.com/$Organization/$Project/_apis/release/releases?api-version=5.1"
+$NewRelease = Invoke-WebRequest $URL -Body $Body -Method "POST"
 
-Write-Host "Create new release at $($NewRelease.release._links.web.refs)"
+Write-Host "Created release: $($NewRelease.release._links.web.refs)"
