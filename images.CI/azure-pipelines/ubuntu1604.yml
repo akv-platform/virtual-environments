@@ -8,6 +8,8 @@
 
 trigger:
   batch: false
+  branches:
+    include: master
 pr:
   autoCancel: true
   branches:
