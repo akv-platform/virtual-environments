@@ -6,7 +6,8 @@
 #     - master
 #   always: true
 
-trigger: none
+trigger: 
+  batch: false
 pr:
   autoCancel: true
   branches:
