@@ -27,7 +27,7 @@ jobs:
 
   - task: PowerShell@2
     displayName: 'Create deployment release'
-  - inputs:
+    inputs:
       targetType: filePath
       filePath: ./images.CI/create-release.ps1
       arguments: -BuildId $(Build.BuildNumber) `
