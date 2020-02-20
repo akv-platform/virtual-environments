@@ -27,11 +27,11 @@ $params = @{
     Method = "POST"
     ContentType = "application/json"
     Uri = $URL
-    Headers = @headers
+    Headers = $headers
     Body = $Body
 }
 
-$pipeline = Invoke-RestMethod -Uri $URL -Headers @headers
+$pipeline = Invoke-RestMethod -Uri $URL -Headers $headers
 Write-Host $pipeline
 
 $NewRelease = Invoke-RestMethod @params
