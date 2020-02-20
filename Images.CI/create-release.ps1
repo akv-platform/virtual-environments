@@ -23,8 +23,15 @@ $headers = @{
     Authorization = "Basic ${base64AuthInfo}"
 }
 
+$params = @{
+    Method = "POST"
+    ContentType = "application/json"
+    Uri = $URL
+    Headers = $headers
+    Body = $Body
+}
 
-$NewRelease = Invoke-RestMethod $URL -Body $Body -Method "POST" -Headers $headers -ContentType "application/json"
+$NewRelease = Invoke-RestMethod @params
 
 
 
