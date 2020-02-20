@@ -31,4 +31,4 @@ $headers = @{
 $NewRelease = Invoke-RestMethod $URL -Body $Body -Method "POST" -Headers $headers -ContentType "application/json"
 
 
-Write-Host "Created release: $($NewRelease)"
+Write-Host "Created release: $($NewRelease.environments[0].release._links.web.href)"
