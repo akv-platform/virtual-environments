@@ -9,10 +9,6 @@ param(
 
 $Body = @{
     definitionId = $DefinitionId
-    variables = {
-        ImageBuildId = $BuildId
-        ImageName = $ImageName
-    }
     isDraft = "false"
 } | ConvertTo-Json
 
@@ -32,7 +28,7 @@ $params = @{
 }
 
 $pipeline = Invoke-RestMethod -Uri $URL -Headers $headers
-$pipeline | ForEach-Object {
+$pipelin.value | ForEach-Object {
   Write-Host $_ | Format-List | Out-String
 }
 
