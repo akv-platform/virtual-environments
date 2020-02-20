@@ -19,7 +19,7 @@ $Body = @{
     isDraft = "false"
 } | ConvertTo-Json
 
-Write-Host $(Body.Emit())
+Write-Host $($Body.Emit())
 $URL = "https://vsrm.dev.azure.com/$Organization/$Project/_apis/release/releases?api-version=5.1"
 
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("'':${AccessToken}"))
