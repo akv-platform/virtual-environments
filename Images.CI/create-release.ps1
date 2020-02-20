@@ -6,22 +6,20 @@ param(
     [String] [Parameter (Mandatory = $True)] $DefinitionId,
     [String] [Parameter (Mandatory = $True)] $AccessToken
 )
-$Body = @"
-{
-    "definitionId" : $DefinitionId,
-    "variables" : {
-        "ImageBuildId" : { 
-            "value" : $BuildId
-        },
-        "ImageName" : {
-            "value" : $ImageName
-        }
-    },
-    "isDraft" : "false"
-}
-"@ | ConvertTo-Json
+$Body = @{
+    definitionId = $DefinitionId
+    variables = {
+      ImageBuildId = {
+        value = $BuildId
+      }
+      ImageName = {
+        value = $ImageName
+      }
+    }
+    isDraft = "false"
+} | ConvertTo-Json
 
-Write-Host $Body
+Write-Host @Body
 $URL = "https://vsrm.dev.azure.com/$Organization/$Project/_apis/release/releases?api-version=5.1"
 
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("'':${AccessToken}"))
