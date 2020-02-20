@@ -6,24 +6,6 @@ jobs:
   - group: Image Generation Variables
 
   steps:
-  - task: PowerShell@2
-    displayName: 'Build VM'
-    inputs:
-      targetType: filePath
-      filePath: ./images.CI/build-image.ps1
-      arguments: -ResourcesNamePrefix $(Build.BuildNumber) `
-                        -ClientId $(CLIENT_ID) `
-                        -ClientSecret $(CLIENT_SECRET) `
-                        -Image ${{ parameters.image_type }} `
-                        -ResourceGroup $(AZURE_RESOURCE_GROUP) `
-                        -StorageAccount $(AZURE_STORAGE_ACCOUNT) `
-                        -SubscriptionId $(AZURE_SUBSCRIPTION) `
-                        -TenantId $(AZURE_TENANT) `
-                        -Location $(AZURE_LOCATION) `
-                        -VirtualNetworkName $(BUILD_AGENT_VNET_NAME) `
-                        -VirtualNetworkRG $(BUILD_AGENT_VNET_RESOURCE_GROUP) `
-                        -VirtualNetworkSubnet $(BUILD_AGENT_SUBNET_NAME) `
-                        -GitHubFeedToken $(GITHUB_TOKEN)
 
   - task: PowerShell@2
     displayName: 'Create deployment release'
