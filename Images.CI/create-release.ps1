@@ -6,19 +6,21 @@ param(
     [String] [Parameter (Mandatory = $True)] $DefinitionId,
     [String] [Parameter (Mandatory = $True)] $AccessToken
 )
+$Body = @"
+{
+    "definitionId" : $DefinitionId,
+    "variables" : {
+        "ImageBuildId" : { 
+            "value" : $BuildId
+        },
+        "ImageName" : {
+            "value" : $ImageName
+        }
+    },
+    "isDraft" : "false"
+}
+"@
 
-$Body = @{
-    definitionId = $DefinitionId
-    variables = {
-      ImageBuildId = {
-        value = $BuildId
-      }
-      ImageName = {
-        value = $ImageName
-      }
-    }
-    isDraft = "false"
-} | ConvertTo-Json -Depth 10
 Write-Host $Body
 $URL = "https://vsrm.dev.azure.com/$Organization/$Project/_apis/release/releases?api-version=5.1"
 
