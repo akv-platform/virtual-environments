@@ -9,6 +9,14 @@ param(
 
 $Body = @{
     definitionId = $DefinitionId
+    variables = {
+      ImageBuildId = {
+        value = $BuildId
+      }
+      ImageName = {
+        value = $ImageName
+      }
+    }
     isDraft = "false"
 } | ConvertTo-Json
 
