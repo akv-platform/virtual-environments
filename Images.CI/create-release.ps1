@@ -37,7 +37,7 @@ $params = @{
 
 $pipeline = Invoke-RestMethod -Uri $URL -Headers $headers
 $pipelin.value | ForEach-Object {
-  Write-Host $_ | Format-List | Out-String
+  Write-Host $_
 }
 
 $NewRelease = Invoke-RestMethod @params
