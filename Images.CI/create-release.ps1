@@ -7,14 +7,16 @@ param(
     [String] [Parameter (Mandatory = $True)] $AccessToken
 )
 
-$Body = @{
-    definitionId = $DefinitionId
-    variables = {
-        ImageBuildId = $BuildId
-        ImageName = $ImageName
-    }
-    isDraft = "false"
+$Body = @"
+{
+    "definitionId" : $DefinitionId,
+    "variables" : {
+        "ImageBuildId" : $BuildId,
+        "ImageName" : $ImageName,
+    },
+    "isDraft" : false
 }
+"@
 
 $URL = "https://vsrm.dev.azure.com/$Organization/$Project/_apis/release/releases?api-version=5.1"
 
