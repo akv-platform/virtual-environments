@@ -18,7 +18,7 @@ $Body = @{
       }
     }
     isDraft = "false"
-} | ConvertTo-Json
+} | ConvertTo-Json -Depth 10
 Write-Host $Body
 $URL = "https://vsrm.dev.azure.com/$Organization/$Project/_apis/release/releases?api-version=5.1"
 
