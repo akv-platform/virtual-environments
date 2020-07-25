@@ -6,7 +6,10 @@ schedules:
     - master
   always: true
 
-trigger: none
+trigger: 
+  batch: false
+  branches:
+    include: master
 pr:
   autoCancel: true
   branches:
