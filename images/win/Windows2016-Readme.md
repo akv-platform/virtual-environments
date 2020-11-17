@@ -1,14 +1,19 @@
 | Announcements |
 |-|
 | [Default Node.JS will be switched to 14.x on all platforms ](https://github.com/actions/virtual-environments/issues/1953) |
-| [[macOS] Default Python will be upgraded to 3.9](https://github.com/actions/virtual-environments/issues/1929) |
+| [.NET 5.0 will become a default .NET version soon [date will be defined later]](https://github.com/actions/virtual-environments/issues/1891) |
+| [[Ubuntu] [Windows] Boost 1.69.0 will be deprecated on November, 10](https://github.com/actions/virtual-environments/issues/1847) |
+***
+| Announcements |
+|-|
+| [Default Node.JS will be switched to 14.x on all platforms ](https://github.com/actions/virtual-environments/issues/1953) |
 | [.NET 5.0 will become a default .NET version the week of November 16, 2020](https://github.com/actions/virtual-environments/issues/1891) |
 | [[Ubuntu] [Windows] Boost 1.69.0 will be deprecated on November, 10](https://github.com/actions/virtual-environments/issues/1847) |
 | [Switch Unix tools from Git internal tools to MSYS2 tools on Windows images](https://github.com/actions/virtual-environments/issues/1525) |
 ***
 # Microsoft Windows Server 2016 Datacenter
-- OS Version: 10.0.14393 Build 3986
-- Image Version: 20201108.1
+- OS Version: 10.0.14393 Build 4046
+- Image Version: 20201111.1
 
 ## Installed Software
 ### Language and Runtime
@@ -34,27 +39,27 @@
 - RubyGems 3.1.4
 - Helm 3.4.0
 - Composer 2.0.6
-- NuGet 5.7.0.6726
+- NuGet 5.8.0.6930
 - Pipx 0.15.6.0
 
 ### Project Management
 - Ant 1.10.9
 - Maven 3.6.3
 - Gradle 6.7
-- sbt 1.4.1
+- sbt 1.4.2
 
 ### Tools
 - azcopy 10.7.0
 - Bazel 3.7.0
 - Bazelisk 1.7.3
 - CMake 3.18.4
-- CodeQL Action Bundle 2.3.1+202010222007
+- CodeQL Action Bundle 2.3.3
 - R 4.0.3
 - Docker 19.03.12
 - Docker-compose 1.27.4
 - Git 2.29.2
 - Git LFS 2.12.1
-- Google Cloud SDK 317.0.0
+- Google Cloud SDK 318.0.0
 - InnoSetup 6.0.5
 - jq 1.6
 - Kubectl 1.19.3
@@ -77,11 +82,11 @@
 - yamllint 1.25.0
 
 ### CLI Tools
-- Azure CLI 2.14.1
+- Azure CLI 2.14.2
 - Azure DevOps CLI extension 0.18.0
-- Azure Dev Spaces CLI 1.0.20201021.1
-- AWS CLI 2.0.62
-- AWS SAM CLI 1.8.0
+- Azure Dev Spaces CLI 1.0.20201028.9
+- AWS CLI 2.0.63
+- AWS SAM CLI 1.9.0
 - AWS Session Manager CLI 1.2.7.0
 - Alibaba Cloud CLI 3.0.60
 - Cloud Foundry CLI 6.53.0
@@ -98,11 +103,11 @@
 - cargo-outdated v0.9.13
 
 ### Browsers and webdrivers
-- Google Chrome 86.0.4240.183
+- Google Chrome 86.0.4240.193
 - Chrome Driver 86.0.4240.22
 - Microsoft Edge 86.0.622.63
 - Microsoft Edge Driver 86.0.622.63
-- Mozilla Firefox 82.0.2
+- Mozilla Firefox 82.0.3
 - Gecko Driver 0.28.0
 - IE Driver 3.150.1.0
 
@@ -213,7 +218,7 @@ Note: MSYS2 is pre-installed on image but not added to PATH.
 ### Visual Studio Enterprise 2017
 | Name                          | Version         | Path                                                           |
 | ----------------------------- | --------------- | -------------------------------------------------------------- |
-| Visual Studio Enterprise 2017 | 15.9.28307.1274 | C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise |
+| Visual Studio Enterprise 2017 | 15.9.28307.1300 | C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise |
 
 #### Workloads, components and extensions:
 
@@ -482,20 +487,20 @@ Note: MSYS2 is pre-installed on image but not added to PATH.
 
 ### .NET Core SDK
 `Location C:\Program Files\dotnet\sdk`
-- 1.1.14 2.1.300 2.1.301 2.1.302 2.1.401 2.1.402 2.1.403 2.1.500 2.1.502 2.1.503 2.1.504 2.1.505 2.1.506 2.1.507 2.1.508 2.1.509 2.1.510 2.1.511 2.1.512 2.1.513 2.1.514 2.1.515 2.1.516 2.1.517 2.1.518 2.1.519 2.1.602 2.1.603 2.1.604 2.1.605 2.1.606 2.1.607 2.1.608 2.1.609 2.1.610 2.1.611 2.1.612 2.1.613 2.1.614 2.1.615 2.1.616 2.1.700 2.1.701 2.1.801 2.1.802 2.1.803 2.1.804 2.1.805 2.1.806 2.1.807 2.1.808 2.1.809 2.1.810 2.1.811 3.1.100 3.1.101 3.1.102 3.1.103 3.1.104 3.1.105 3.1.106 3.1.107 3.1.108 3.1.109 3.1.200 3.1.201 3.1.202 3.1.300 3.1.301 3.1.302 3.1.401 3.1.402 3.1.403
+- 1.1.14 2.1.300 2.1.301 2.1.302 2.1.401 2.1.402 2.1.403 2.1.500 2.1.502 2.1.503 2.1.504 2.1.505 2.1.506 2.1.507 2.1.508 2.1.509 2.1.510 2.1.511 2.1.512 2.1.513 2.1.514 2.1.515 2.1.516 2.1.517 2.1.518 2.1.519 2.1.602 2.1.603 2.1.604 2.1.605 2.1.606 2.1.607 2.1.608 2.1.609 2.1.610 2.1.611 2.1.612 2.1.613 2.1.614 2.1.615 2.1.616 2.1.700 2.1.701 2.1.801 2.1.802 2.1.803 2.1.804 2.1.805 2.1.806 2.1.807 2.1.808 2.1.809 2.1.810 2.1.811 3.1.100 3.1.101 3.1.102 3.1.103 3.1.104 3.1.105 3.1.106 3.1.107 3.1.108 3.1.109 3.1.110 3.1.200 3.1.201 3.1.202 3.1.300 3.1.301 3.1.302 3.1.401 3.1.402 3.1.403 3.1.404 5.0.100
 
 ### .NET Core Runtime
 `Location: C:\Program Files\dotnet\shared\Microsoft.AspNetCore.All`
 - 2.1.0 2.1.1 2.1.2 2.1.3 2.1.4 2.1.5 2.1.6 2.1.7 2.1.8 2.1.9 2.1.10 2.1.11 2.1.12 2.1.13 2.1.14 2.1.15 2.1.16 2.1.17 2.1.18 2.1.19 2.1.20 2.1.21 2.1.22 2.1.23
 
 `Location: C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App`
-- 2.1.0 2.1.1 2.1.2 2.1.3 2.1.4 2.1.5 2.1.6 2.1.7 2.1.8 2.1.9 2.1.10 2.1.11 2.1.12 2.1.13 2.1.14 2.1.15 2.1.16 2.1.17 2.1.18 2.1.19 2.1.20 2.1.21 2.1.22 2.1.23 3.1.0 3.1.1 3.1.2 3.1.3 3.1.4 3.1.5 3.1.6 3.1.7 3.1.8 3.1.9
+- 2.1.0 2.1.1 2.1.2 2.1.3 2.1.4 2.1.5 2.1.6 2.1.7 2.1.8 2.1.9 2.1.10 2.1.11 2.1.12 2.1.13 2.1.14 2.1.15 2.1.16 2.1.17 2.1.18 2.1.19 2.1.20 2.1.21 2.1.22 2.1.23 3.1.0 3.1.1 3.1.2 3.1.3 3.1.4 3.1.5 3.1.6 3.1.7 3.1.8 3.1.9 3.1.10 5.0.0
 
 `Location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App`
-- 1.0.16 1.1.13 2.1.0 2.1.1 2.1.2 2.1.3 2.1.4 2.1.5 2.1.6 2.1.7 2.1.8 2.1.9 2.1.10 2.1.11 2.1.12 2.1.13 2.1.14 2.1.15 2.1.16 2.1.17 2.1.18 2.1.19 2.1.20 2.1.21 2.1.22 2.1.23 3.1.0 3.1.1 3.1.2 3.1.3 3.1.4 3.1.5 3.1.6 3.1.7 3.1.8 3.1.9
+- 1.0.16 1.1.13 2.1.0 2.1.1 2.1.2 2.1.3 2.1.4 2.1.5 2.1.6 2.1.7 2.1.8 2.1.9 2.1.10 2.1.11 2.1.12 2.1.13 2.1.14 2.1.15 2.1.16 2.1.17 2.1.18 2.1.19 2.1.20 2.1.21 2.1.22 2.1.23 3.1.0 3.1.1 3.1.2 3.1.3 3.1.4 3.1.5 3.1.6 3.1.7 3.1.8 3.1.9 3.1.10 5.0.0
 
 `Location: C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App`
-- 3.1.0 3.1.1 3.1.2 3.1.3 3.1.4 3.1.5 3.1.6 3.1.7 3.1.8 3.1.9
+- 3.1.0 3.1.1 3.1.2 3.1.3 3.1.4 3.1.5 3.1.6 3.1.7 3.1.8 3.1.9 3.1.10 5.0.0
 
 ### .NET Framework
 `Type: Developer Pack`
@@ -545,10 +550,11 @@ All other versions are saved but not installed.
 ### Cached Docker images
 | Repository:Tag                                                            | Digest                                                                   | Created    |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ---------- |
-| mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2016  | sha256:650301a9671e66ee2785cc5d1d3838da09c2843da36f90d6b8138f9eabc274b2  | 2020-10-13 |
-| mcr.microsoft.com/dotnet/framework/runtime:4.8-windowsservercore-ltsc2016 | sha256:dbba8ea48c7e16c83cb11190918f0194d3f6b8ebdb84911dd5c1b71583cb3812  | 2020-10-13 |
-| mcr.microsoft.com/windows/servercore:ltsc2016                             | sha256:7f5b13497afa9a7b76f61e87461d7c14e529d8f11d9994056a50c85d6147271e  | 2020-10-02 |
+| mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2016  | sha256:568f9deecdc69e13dbfda34ed581f4e2eb42dcfae5fdf7e7f7931608c8310833  | 2020-11-10 |
+| mcr.microsoft.com/dotnet/framework/runtime:4.8-windowsservercore-ltsc2016 | sha256:1ff6bf05b00b78cae3aa5225d0577402f91135e26b39f1f7c8e6ce9059b434a9  | 2020-11-10 |
+| mcr.microsoft.com/windows/servercore:ltsc2016                             | sha256:14883370b6e3b9c932e53e1d4753921ac528c33e4b3450bb5948cb9d8a68298b  | 2020-10-28 |
 | microsoft/aspnetcore-build:1.0-2.0                                        | sha256:9ecc7c5a8a7a11dca5f08c860165646cb30d084606360a3a72b9cbe447241c0c  | 2018-08-15 |
 | mcr.microsoft.com/windows/nanoserver:10.0.14393.953                       | sha256:fc60bd5ae0e61b334ce1cf1bcbf20c10c36b4c5482a01da319c9c989f9e6e268  | 2017-03-08 |
+
 
 
